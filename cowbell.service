@@ -1,0 +1,16 @@
+[Unit]
+Description=VoIP door bell
+Documentation=https://github.com/MarcelWaldvogel/cowbell
+After=network.target
+
+[Service]
+# CWD is used as a basis for media files
+WorkingDirectory=/home/marcel/cowbell
+ExecStart=/home/marcel/cowbell/cowbell
+User=cowbell
+# This should match the GPIO port in cowbell.ini
+ExecStartPre=/usr/local/bin/gpio export 17 in
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

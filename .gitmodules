@@ -1,0 +1,6 @@
+[submodule "flexosip"]
+	path = flexosip
+	url = https://github.com/MarcelWaldvogel/flexosip.git
+[submodule "wiringPi"]
+	path = wiringPi
+	url = git://git.drogon.net/wiringPi

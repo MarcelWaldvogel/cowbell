@@ -1,0 +1,28 @@
+; How to register with the registrar (the VoIP switch)
+[registration]
+uri         = sip:cow-bell@fritz.box
+registrar   = sip:fritz.box
+login       = cow-bell
+password    = SECRET
+
+; How to alert
+[alert]
+destination = sip:**9@fritz.box
+name        = Door bell
+; How long to ring for when alerting, in seconds
+; 0: Forever
+duration    = 10
+
+; When to alert
+[trigger]
+; BCM GPIO number (GPIO 17 is Header 11)
+; Make sure this pin has been exported previously by having run
+; `gpio export 17 in` or similar.
+; When running under systemd, make sure you adapt `cowbell.service` as well.
+gpio        = 17
+; Trigger when level reaches 0 or 1?
+level       = 1
+
+[media]
+; Change if desired
+;welcome     = media/hello.ogg
