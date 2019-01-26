@@ -23,7 +23,7 @@ complete.
     - cause confusion
     - allow remote (unauthorized) users to update the settings
 - Setup a Raspberry Pi with a motion detector
-  * I used a [3.3 V Passive Infrared Motion Detector](https://www.pollin.de/p/pir-bewegungsmelder-modul-daypower-hc-sr501-810590)
+  * I used a [3.3 V Passive Infrared Motion Detector](https://www.pollin.de/p/pir-bewegungsmelder-modul-daypower-hc-sr501-810590). Please note that it requires 5 V power to work correctly, but the output signal is at 3.3 V.
 - Configure a Raspberry Pi to run *Cowbell*:
   * Install *Raspbian Stretch*
   * Download `cowbell` (`git clone https://github.com/MarcelWaldvogel/cowbell`)
