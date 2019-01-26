@@ -28,31 +28,31 @@ static int handle_ini(void* UNUSED_PARAM(user), const char* section,
 		      const char* name, const char* value)
 {
 #define MATCH(s, n) strcmp(section, s) == 0 && strcmp(name, n) == 0
-    if (MATCH("registration", "uri")) {
-        uri = strdup(value);
-    } else if (MATCH("registration", "registrar")) {
-        registrar = strdup(value);
-    } else if (MATCH("registration", "login")) {
-        login = strdup(value);
-    } else if (MATCH("registration", "password")) {
-        password = strdup(value);
-    } else if (MATCH("alert", "destination")) {
-        destination = strdup(value);
-    } else if (MATCH("alert", "name")) {
-        name = strdup(value);
-    } else if (MATCH("alert", "duration")) {
-        ring_duration = atoi(value);
-    } else if (MATCH("trigger", "gpio")) {
-        trigger_pin = atoi(value);
-    } else if (MATCH("trigger", "level")) {
-        trigger_level = atoi(value);
-    } else if (MATCH("media", "welcome")) {
-        welcome = strdup(value);
-    } else {
-    	fprintf(stderr, "Unknown config option [%s] %s=%s\n", section, name, value);
-        return 0;  /* unknown section/name, error */
-    }
-    return 1;
+  if (MATCH("registration", "uri")) {
+    uri = strdup(value);
+  } else if (MATCH("registration", "registrar")) {
+    registrar = strdup(value);
+  } else if (MATCH("registration", "login")) {
+    login = strdup(value);
+  } else if (MATCH("registration", "password")) {
+    password = strdup(value);
+  } else if (MATCH("alert", "destination")) {
+    destination = strdup(value);
+  } else if (MATCH("alert", "name")) {
+    name = strdup(value);
+  } else if (MATCH("alert", "duration")) {
+    ring_duration = atoi(value);
+  } else if (MATCH("trigger", "gpio")) {
+    trigger_pin = atoi(value);
+  } else if (MATCH("trigger", "level")) {
+    trigger_level = atoi(value);
+  } else if (MATCH("media", "welcome")) {
+    welcome = strdup(value);
+  } else {
+    fprintf(stderr, "Unknown config option [%s] %s=%s\n", section, name, value);
+    return 0;  /* unknown section/name, error */
+  }
+  return 1;
 }
 
 static _Bool watchful = false, incoming_call = false, outgoing_call = false;
